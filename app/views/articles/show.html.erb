@@ -1,7 +1,16 @@
-<h1>Showing Article Details</h1>
-<p><strong>Title: </strong><%=@article.title %></p>
-<p><strong>Description: </strong><%=@article.description %></p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete',  article_path(@article), method: :delete, data: { confirm:"Are you sure?"} %> |
-<%= link_to 'Return', articles_path() %>
+<div class="container">
+  <div class="card text-center mt-4">
+    <div class="card-header">
+      <h2>Showing Article Details</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%=@article.title %></h5>
+      <div class="text-left">
+        <p class="card-text text-left"><%=simple_format(@article.description) %></p>
+      </div>
+      <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-success" %>
+      <%= link_to 'Delete',  article_path(@article), method: :delete, data: { confirm:"Are you sure?"}, class: "btn btn-danger" %>
+      <%= link_to 'Return', articles_path(), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
