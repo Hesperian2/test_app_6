@@ -1,10 +1,11 @@
 <div class="container-fluid">
-  <div class="card text-center mt-4">
+  <div class="card text-center mt-4 mb-4">
     <div class="card-header">
       <h2><%= @user.username %>'s Profile</h2>
     </div>
     <div>
       <%= gravitar_for @user, size: 200 %>
+      <%= link_to "edit your profile", edit_user_path(@user), class: "btn btn-outline-info mb-3" %>
     </div>
   </div>
 </div>
