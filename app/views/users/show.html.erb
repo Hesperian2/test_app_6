@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="card text-center mt-4">
+    <div class="card-header">
+      <h2><%= @user.username %>'s Profile</h2>
+    </div>
+    <div>
+      <%= gravitar_for @user, size: 200 %>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="card text-center mt-4">
+    <div class="card-header">
+      <h2><%= @user.username %>'s Articles</h2>
+    </div>
+    <div>
+      <%= render 'articles/article' %>
+    </div>
+  </div>
+</div>

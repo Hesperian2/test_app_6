@@ -2,32 +2,7 @@
   <div class="card-header">
     <h2>Forum</h2>
   </div>
-  <div class="card-body">
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Description</th>
-          <th scope="col">Author</th>
-          <th scope="col">Created</th>
-          <th scope="col">Updated</th>
-          <th scope="col">Links</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @articles.each do |article| %>
-          <tr>
-            <td><%= link_to article.title, article_path(article), class: "text-secondary" %></td>
-            <td><%= truncate(article.description, length: 50) %></td>
-            <td><%= article.user.username %></td>
-            <td><%= time_ago_in_words(article.created_at) %> ago</td>
-            <td><%= time_ago_in_words(article.updated_at) %> ago</td>
-            <td><%= link_to 'View', article_path(article) %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+  <%= render 'article' %>
   <div class="card-footer text-muted">
     <a href=<%= new_article_path() %> class="btn btn-success"> New</a>
   </div>
